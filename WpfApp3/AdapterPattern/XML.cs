@@ -6,15 +6,12 @@ using System.Threading.Tasks;
 using System.Xml;
 
 namespace WpfApp3.AdapterPattern
-{
-  
+{  
   public  class XML
-    {       
-        class Program
-        {
-            public static void Write(string name,string surname,string email)
+    {  
+            public void Serializer(string name,string surname,string email)
             {  
-                using (var writer = new XmlTextWriter("Login.xml", Encoding.UTF8))
+                using (var writer = new XmlTextWriter("Login1.xml", Encoding.UTF8))
                 {
                     writer.Formatting = Formatting.Indented;
                     writer.WriteStartDocument();
@@ -36,7 +33,7 @@ namespace WpfApp3.AdapterPattern
                 }
             }         
             
-        }       
+             
 
   }
 }

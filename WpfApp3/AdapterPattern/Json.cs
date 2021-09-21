@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace WpfApp3.AdapterPattern
 {
-    class Json
+  public  class Json
     {
-        static void JsonSerialization(string name,string surname,string email)
+      public void JsonSerialization(string name,string surname,string email)
         {
             string login = $"Name: {name} Surname: {surname} Email: {email}";
 

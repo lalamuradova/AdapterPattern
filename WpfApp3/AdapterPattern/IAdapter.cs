@@ -8,10 +8,7 @@ namespace WpfApp3.AdapterPattern
 {
     interface IAdapter
     {
-            void Add();
-            void Update();
-            string Get(int id);
-        
+        void Serializer(string name, string surname, string email);        
     }
 
 

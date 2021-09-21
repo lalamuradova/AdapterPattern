@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfApp3"
+        xmlns:local="clr-namespace:WpfApp3" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid Background="Bisque">
@@ -14,16 +14,22 @@
 
         <Canvas Grid.Column="0" >
             <Label FontFamily="Georgia" FontWeight="DemiBold" FontSize="26" Canvas.Left="100">Name</Label>
-            <TextBox x:Name="nameTxtBox" FontFamily="Georgia" FontWeight="DemiBold" FontSize="26" Width="200" Canvas.Left="50" Canvas.Top="50"></TextBox>
+            <TextBox x:Name="nameTxtBox" Text="{Binding Name,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" FontFamily="Georgia" FontWeight="DemiBold" FontSize="26" Width="200" Canvas.Left="50" Canvas.Top="50"></TextBox>
             <Label FontFamily="Georgia" FontWeight="DemiBold" FontSize="26" Canvas.Left="100" Canvas.Top="100">Surname</Label>
-            <TextBox x:Name="SurnameTxtBox" FontFamily="Georgia" FontWeight="DemiBold" FontSize="26" Width="200" Canvas.Left="50" Canvas.Top="150"></TextBox>
+            <TextBox Text="{Binding Surname,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" x:Name="SurnameTxtBox" FontFamily="Georgia" FontWeight="DemiBold" FontSize="26" Width="200" Canvas.Left="50" Canvas.Top="150"></TextBox>
             <Label FontFamily="Georgia" FontWeight="DemiBold" FontSize="26" Canvas.Left="100" Canvas.Top="200">Email</Label>
-            <TextBox x:Name="EmailTxtBox" FontFamily="Georgia" FontWeight="DemiBold" FontSize="26" Width="200" Canvas.Left="50" Canvas.Top="250"></TextBox>
-            <Button  FontFamily="Georgia" FontWeight="DemiBold" FontSize="26" Margin="100,0,0,0" Width="100" Height="80" Canvas.Left="80" Canvas.Top="300" Background="Violet">SAVE</Button>
+            <TextBox Text="{Binding Email,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" x:Name="EmailTxtBox" FontFamily="Georgia" FontWeight="DemiBold" FontSize="26" Width="200" Canvas.Left="50" Canvas.Top="250"></TextBox>
+            <Button x:Name="saveBtn" Command="{Binding SaveCommand}" FontFamily="Georgia" FontWeight="DemiBold" FontSize="26" Margin="100,0,0,0" Width="100" Height="80" Canvas.Left="80" Canvas.Top="300" Background="Violet">SAVE</Button>
         </Canvas>
         <Canvas Grid.Column="1">
             <Viewbox  Height="50" Width="50" Canvas.Left="40" Canvas.Top="100">
-                <RadioButton GroupName="Radio" IsChecked="True" FontSize="26"/>
+                <RadioButton  GroupName="Radio" IsChecked="True" FontSize="26">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Checked">
+                            <i:InvokeCommandAction Command="{Binding CheckedCommand}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </RadioButton>
             </Viewbox>
             <Label FontFamily="Georgia" FontWeight="DemiBold" FontSize="26" Canvas.Left="100" Canvas.Top="100">XML</Label>
             <Viewbox Height="50" Width="50" Canvas.Left="40" Canvas.Top="200">

@@ -6,7 +6,21 @@ using System.Threading.Tasks;
 
 namespace WpfApp3.AdapterPattern
 {
-    class XMLAdapter
+    class XMLAdapter : IAdapter
     {
+        private XML _db;
+
+        public XMLAdapter(XML db)
+        {
+            _db = db;
+        }
+
+
+        public void Serializer(string name, string surname, string email)
+        {
+            _db.Serializer(name, surname, email);
+        }
     }
+
 }
+    
