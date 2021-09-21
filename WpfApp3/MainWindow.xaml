@@ -1,0 +1,36 @@
+﻿<Window x:Class="WpfApp3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Background="Bisque">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Canvas Grid.Column="0" >
+            <Label FontFamily="Georgia" FontWeight="DemiBold" FontSize="26" Canvas.Left="100">Name</Label>
+            <TextBox x:Name="nameTxtBox" FontFamily="Georgia" FontWeight="DemiBold" FontSize="26" Width="200" Canvas.Left="50" Canvas.Top="50"></TextBox>
+            <Label FontFamily="Georgia" FontWeight="DemiBold" FontSize="26" Canvas.Left="100" Canvas.Top="100">Surname</Label>
+            <TextBox x:Name="SurnameTxtBox" FontFamily="Georgia" FontWeight="DemiBold" FontSize="26" Width="200" Canvas.Left="50" Canvas.Top="150"></TextBox>
+            <Label FontFamily="Georgia" FontWeight="DemiBold" FontSize="26" Canvas.Left="100" Canvas.Top="200">Email</Label>
+            <TextBox x:Name="EmailTxtBox" FontFamily="Georgia" FontWeight="DemiBold" FontSize="26" Width="200" Canvas.Left="50" Canvas.Top="250"></TextBox>
+            <Button  FontFamily="Georgia" FontWeight="DemiBold" FontSize="26" Margin="100,0,0,0" Width="100" Height="80" Canvas.Left="80" Canvas.Top="300" Background="Violet">SAVE</Button>
+        </Canvas>
+        <Canvas Grid.Column="1">
+            <Viewbox  Height="50" Width="50" Canvas.Left="40" Canvas.Top="100">
+                <RadioButton GroupName="Radio" IsChecked="True" FontSize="26"/>
+            </Viewbox>
+            <Label FontFamily="Georgia" FontWeight="DemiBold" FontSize="26" Canvas.Left="100" Canvas.Top="100">XML</Label>
+            <Viewbox Height="50" Width="50" Canvas.Left="40" Canvas.Top="200">
+                <RadioButton GroupName="Radio" FontSize="26"/>
+            </Viewbox>
+            <Label FontFamily="Georgia" FontWeight="DemiBold" FontSize="26" Canvas.Left="100" Canvas.Top="200">Json</Label>
+        </Canvas>
+
+    </Grid>
+</Window>
