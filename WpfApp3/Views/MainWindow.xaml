@@ -26,14 +26,20 @@
                 <RadioButton  GroupName="Radio" IsChecked="True" FontSize="26">
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="Checked">
-                            <i:InvokeCommandAction Command="{Binding CheckedCommand}" />
+                            <i:InvokeCommandAction Command="{Binding CheckedXmlCommand}" />
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                 </RadioButton>
             </Viewbox>
             <Label FontFamily="Georgia" FontWeight="DemiBold" FontSize="26" Canvas.Left="100" Canvas.Top="100">XML</Label>
             <Viewbox Height="50" Width="50" Canvas.Left="40" Canvas.Top="200">
-                <RadioButton GroupName="Radio" FontSize="26"/>
+                <RadioButton GroupName="Radio" FontSize="26">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Checked">
+                            <i:InvokeCommandAction Command="{Binding CheckedJsonCommand}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </RadioButton>
             </Viewbox>
             <Label FontFamily="Georgia" FontWeight="DemiBold" FontSize="26" Canvas.Left="100" Canvas.Top="200">Json</Label>
         </Canvas>

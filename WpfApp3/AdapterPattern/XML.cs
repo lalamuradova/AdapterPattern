@@ -11,7 +11,7 @@ namespace WpfApp3.AdapterPattern
     {  
             public void Serializer(string name,string surname,string email)
             {  
-                using (var writer = new XmlTextWriter("Login1.xml", Encoding.UTF8))
+                using (var writer = new XmlTextWriter($"Login{name}.xml", Encoding.UTF8))
                 {
                     writer.Formatting = Formatting.Indented;
                     writer.WriteStartDocument();

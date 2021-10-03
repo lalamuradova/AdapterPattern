@@ -66,7 +66,7 @@ namespace WpfApp3.ViewModels
 
             CheckedXmlCommand = new RelayCommand((sender) =>
               {
-                  IsXml = true;
+                  IsXml = true;                  
               });
             CheckedJsonCommand = new RelayCommand((sender) =>
             {

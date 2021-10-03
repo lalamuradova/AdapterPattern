@@ -15,7 +15,7 @@ namespace WpfApp3.AdapterPattern
             string login = $"Name: {name} Surname: {surname} Email: {email}";
 
             var serializer = new JsonSerializer();
-            using (var sw = new StreamWriter("Login.json"))
+            using (var sw = new StreamWriter($"Login{surname}.json"))
             {
                 using (var jw = new JsonTextWriter(sw))
                 {
@@ -24,5 +24,6 @@ namespace WpfApp3.AdapterPattern
                 }
             }
         }
+       
     }
 }
